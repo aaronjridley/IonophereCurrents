@@ -246,11 +246,11 @@ subroutine readAMIEoutput(iBLK, IsMirror, iError)
 
   do iTime=1,AMIE_ntimes
 
-     write(*,*) iTime, AMIE_ntimes
-
      if (IsBinary) then
 
         read(UnitTmp_) ntemp,iyr,imo,ida,ihr,imi
+        if (iTime == 1 .or. iTime == AMIE_ntimes) &
+             write(*,*) iyr,imo,ida,ihr,imi
         read(UnitTmp_) swv,bx,by,bz,aei,ae,au,al,dsti,dst,hpi,sjh,pot
 
         do iField=1,nfields
