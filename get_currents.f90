@@ -57,8 +57,10 @@ program get_currents
   character (len=iCharLen_), dimension(10) :: Lines
 
   ! Here I am setting the file names of the IE files to read:
-  character (len=iCharLen_) :: cAMIEFileSouth = "b20090722n.swmf"
-  character (len=iCharLen_) :: cAMIEFileNorth = "b20090722s.swmf"
+  character (len=iCharLen_) :: cAMIEFileSouth = "test_ideal.bin"
+  character (len=iCharLen_) :: cAMIEFileNorth = "test_ideal.bin"
+  !character (len=iCharLen_) :: cAMIEFileSouth = "b20090722s.swmf"
+  !character (len=iCharLen_) :: cAMIEFileNorth = "b20090722n.swmf"
 
   character (len=iCharLen_) :: outfilePre = "test", outfileNum, outfile
 
@@ -98,11 +100,18 @@ program get_currents
   ! Set the initial time (obviously, you have to change the time
   ! if you want to change the time to investigate with new files):
 
-  itime(1) = 2009
-  itime(2) = 07
-  itime(3) = 22
-  itime(4) = 06
-  itime(5) = 00
+  !itime(1) = 2009
+  !itime(2) = 07
+  !itime(3) = 22
+  !itime(4) = 06
+  !itime(5) = 00
+  !itime(6) = 00
+  !itime(7) = 00
+  itime(1) = 2020
+  itime(2) = 03
+  itime(3) = 20
+  itime(4) = 12
+  itime(5) = 30
   itime(6) = 00
   itime(7) = 00
   call time_int_to_real(itime, StartTime)
